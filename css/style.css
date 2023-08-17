@@ -55,7 +55,7 @@ body {
 .inputs {
     display: flex;
     flex-direction: column;
-    background-color: rgb(90,87,220);
+    background-color: #231879;
     justify-content: center;
     padding: 60px;
     gap: 10px;
@@ -179,7 +179,7 @@ body {
 }
 
 .resultDinheiroPraMaquina {
-
+    
 }
 
 .resultDinheiroProCliente {
@@ -187,5 +187,11 @@ body {
 }
 
 .resultDinheiroPraFaccao{
+    align-self: center;
+}
 
+.resultDinheiro{
+    display: flex;
+    justify-content: center;
+    margin-right: 30px;
 }
