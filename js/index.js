@@ -6,6 +6,7 @@ const spanDinheiroPraFaccao = document.querySelector('#spanDinheiroPraFaccao')
 const spanBtnCopy = document.querySelector('#spanBtnCopy')
 
 
+
 document.querySelector('#lavarDinheiro').addEventListener('click', function () {
         
 

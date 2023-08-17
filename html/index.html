@@ -13,17 +13,38 @@
             <div><img src="../imagens/crystal-logo3.png" alt="" srcset=""></div>
         </header>
         <main class="blocos main">
-            <div class="inputs">
-                <div>
-                    <label for="dinheiroSujo">Dinheiro Sujo:</label>
-                    <input class="input" type="number" id="dinheiroSujo" required>
+            <div class="blocoCima">
+                <div class="inputs">
+                    <div>
+                        <label for="dinheiroSujo">Dinheiro Sujo:</label>
+                        <input class="input" type="number" id="dinheiroSujo" required>
+                    </div>
+                    <div>
+                        <label for="porcentagem">Porcentagem:</label>
+                        <input class="input" type="number" id="porcentagem" required>
+                        <span class="err" id="porcentError"></span>
+                    </div>
+                    <button id="lavarDinheiro" class="lavarDinheiro">Lavar Dinheiro</button>
                 </div>
-                <div>
-                    <label for="porcentagem">Porcentagem:</label>
-                    <input class="input" type="number" id="porcentagem" required>
-                    <span class="err" id="porcentError"></span>
+                <div class="divParceria">
+                    <h2 class="comParceria">COM PARCERIA</h2>
+                    <div class="pComParceria">
+                        <p>30% para quem lavou </p>
+                        <p>70% para quem levou o dinheiro sujo</p>
+                    </div>
+                    <h2 class="semParceria">SEM PARCERIA</h2>
+                    <p class="pSemParceria">
+                        40% para quem lavou <br>
+                        60% para quem levou o dinheiro sujo
+                    </p>
+                    <p class="ou">OU</p>
+                    <p class="pSemParceria">
+                        50% para quem lavou <br>
+                        50% para quem levou o dinheiro sujo
+                    </p>
                 </div>
-                <button id="lavarDinheiro" class="lavarDinheiro">Lavar Dinheiro</button>
+            </div>
+            <div class="blocoResults">
                 <div class="results">
                     <p>Dinheiro pra máquina: </p>
                     <span id="spanDinheiroPraMaquina"></span>
@@ -36,28 +57,11 @@
                     <p>Dinheiro pra facção: </p>
                     <span id="spanDinheiroPraFaccao"></span>
                 </div>
-                <span id="spanBtnCopy"></span>
             </div>
-            <div class="divParceria">
-                <h2 class="comParceria">COM PARCERIA</h2>
-                <div class="pComParceria">
-                    <p>30% para quem lavou </p>
-                    <p>70% para quem levou o dinheiro sujo</p>
-                </div>
-                <h2 class="semParceria">SEM PARCERIA</h2>
-                <p>
-                    40% para quem lavou <br>
-                    60% para quem levou o dinheiro sujo
-                </p>
-                <p class="ou">OU</p>
-                <p>
-                    50% para quem lavou <br>
-                    50% para quem levou o dinheiro sujo
-                </p>
-            </div>
+            <span id="spanBtnCopy"></span>
         </main>
-        <footer class="blocos footer"><img class="imgDiamante" src="../imagens/crystal-logo.png" alt="" srcset=""></footer>
     </div>
+        <footer class="blocos footer"><img class="imgDiamante" src="../imagens/crystal-logo.png" alt="" srcset=""></footer>
     <script src="../js/index.js"></script>
 </body>
 </html>
