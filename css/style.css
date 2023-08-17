@@ -1,5 +1,16 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'pricedown';  
+    src: url('../fonte/pricedown.otf') format('opentype');
+}
+
+:root {
+    --font-pricedown: 'pricedown', arial;
+
+    --bg-color: #4f26d5;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -24,22 +35,122 @@
 .header {
     flex-basis: 100%;
     height: 200px;
-    background-color: #4f26d5;
+    background-color: var(--bg-color);
 }
 
 .main {
     flex: 1 0 400px;
     display: flex;
+    background-image: url('../imagens/cidade-gta.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(90,87,220);
+    justify-content: center;
+    padding: 60px;
+    gap: 10px;
+    font-size: 3em;
+    border-radius: 8px;
+    font-family: var(--font-pricedown);
+}
+
+.input {
+    width: 100px;
+    padding: 10px;
+    border: 0px;
+    border-radius: 10px;
+}
+
+.lavarDinheiro {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 0px;
+    font-weight: bold;
+}
+
+.results {
+    display: flex;
+    gap: 10px;
+}
+
+.divParceria {
+    display: flex;
+    flex-direction: column;
+    background-color: #231879;
+    font-size: 2em;
+    justify-content: center;
+    padding: 60px;
+    border-radius: 8px;
+}
+
+.comParceria {
+    font-family: var(--font-pricedown);
+    color: green;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.pComParceria {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 40px;
+    border-bottom: 2px solid gray;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.semParceria {
+    font-family: var(--font-pricedown);
+    color: red;
+    text-align: center;
+    padding: 20px 0px;
+    border-top: 2px solid gray;
+}
+
+.ou {
+    text-align: center;
 }
 
 .footer {
     height: 180px;
     flex-basis: 100%;
-    background-color: #4f26d5;
+    background-color: var(--bg-color);
     margin: auto;
 }
 
 .imgDiamante {
     margin: auto;
-    width: 140PX;
+    width: 140px;
+}
+
+.copy-btn {
+    width: 100%;
+    color:  black;
+    padding: 20px;
+    border-radius: 10px;
+    border: 0px;
+}
+
+.success {
+    color: greenyellow;
+}
+
+.resultDinheiroPraMaquina {
+
+}
+
+.resultDinheiroProCliente {
+
+}
+
+.resultDinheiroPraFaccao{
+
 }

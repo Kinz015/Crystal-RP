@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../imagens/crystal-logo2.png" type="image/x-icon">
     <title>CristalRP</title>
 </head>
 <body>
@@ -13,25 +14,46 @@
         </header>
         <main class="blocos main">
             <div class="inputs">
-                <label for="dinheiroSujo">Dinheiro Sujo:</label>
-                <input type="number" id="dinheiroSujo" required>
-                <br>
-                <label for="porcentagem">Porcentagem:</label>
-                <input type="number" id="porcentagem" required>
-                <br>
-                <button id="lavarDinheiro">Lavar Dinheiro</button>
-                <br>
-                <label for="inputDinheiroPraMaquina">Dinheiro pra máquina:</label>
-                <span id="inputDinheiroPraMaquina"></span>
-                <br>
-                <label for="dinheiroProCliente">Dinheiro pro cliente:</label>
-                <span type="number" id="dinheiroProCliente"></span>
-                <br>
-                <label for="dinheiroPraFaccao">Dinheiro pra facção:</label>
-                <span type="number" id="dinheiroPraFaccao"></span>
+                <div>
+                    <label for="dinheiroSujo">Dinheiro Sujo:</label>
+                    <input class="input" type="number" id="dinheiroSujo" required>
+                </div>
+                <div>
+                    <label for="porcentagem">Porcentagem:</label>
+                    <input class="input" type="number" id="porcentagem" required>
+                    <span class="err" id="porcentError"></span>
+                </div>
+                <button id="lavarDinheiro" class="lavarDinheiro">Lavar Dinheiro</button>
+                <div class="results">
+                    <p>Dinheiro pra máquina: </p>
+                    <span id="spanDinheiroPraMaquina"></span>
+                </div>
+                <div class="results">
+                    <p>Dinheiro pro cliente: </p>
+                    <span id="spanDinheiroProCliente"></span>
+                </div>
+                <div class="results">
+                    <p>Dinheiro pra facção: </p>
+                    <span id="spanDinheiroPraFaccao"></span>
+                </div>
+                <span id="spanBtnCopy"></span>
             </div>
-            <div>
-                
+            <div class="divParceria">
+                <h2 class="comParceria">COM PARCERIA</h2>
+                <div class="pComParceria">
+                    <p>30% para quem lavou </p>
+                    <p>70% para quem levou o dinheiro sujo</p>
+                </div>
+                <h2 class="semParceria">SEM PARCERIA</h2>
+                <p>
+                    40% para quem lavou <br>
+                    60% para quem levou o dinheiro sujo
+                </p>
+                <p class="ou">OU</p>
+                <p>
+                    50% para quem lavou <br>
+                    50% para quem levou o dinheiro sujo
+                </p>
             </div>
         </main>
         <footer class="blocos footer"><img class="imgDiamante" src="../imagens/crystal-logo.png" alt="" srcset=""></footer>
