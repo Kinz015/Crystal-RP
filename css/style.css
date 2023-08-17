@@ -65,10 +65,13 @@ body {
 }
 
 .input {
-    width: 100px;
+    width: 100%;
+    height: 40px;
+    font-size: large;
     padding: 10px;
     border: 0px;
     border-radius: 10px;
+
 }
 
 .lavarDinheiro {
@@ -187,7 +190,7 @@ body {
 }
 
 .resultDinheiroPraFaccao{
-    align-self: center;
+
 }
 
 .resultDinheiro{
