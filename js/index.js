@@ -1,13 +1,15 @@
 const dinheiroSujo = document.querySelector('#dinheiroSujo')
 const porcentagem = document.querySelector('#porcentagem')
-const spanDinheiroPraMaquina = document.querySelector('#spanDinheiroPraMaquina')
-const spanDinheiroProCliente = document.querySelector('#spanDinheiroProCliente')
-const spanDinheiroPraFaccao = document.querySelector('#spanDinheiroPraFaccao')
+const divMaquina = document.querySelector('.results1')
+const divCliente = document.querySelector('.results2')
+const divFaccao = document.querySelector('.results3')
 const spanBtnCopy = document.querySelector('#spanBtnCopy')
 
 
 
 document.querySelector('#lavarDinheiro').addEventListener('click', function () {
+
+
 
         const valorDaPorcentagem = Number(porcentagem.value) * Number(dinheiroSujo.value) / 100
 
@@ -16,48 +18,38 @@ document.querySelector('#lavarDinheiro').addEventListener('click', function () {
         const dinheiroProCliente = Number(dinheiroSujo.value) - Number(valorDaPorcentagem)
         
         const dinheiroPraFaccao = valorDaPorcentagem - dinheiroPraMaquina
-        
-        const dollarMaquina = document.createElement('span')
-        dollarMaquina.classList.add('material-symbols-outlined')
-        dollarMaquina.textContent = 'attach_money'
-        dollarMaquina.style.fontSize = '1em'
-        dollarMaquina.style.marginTop = '8px'
 
         const resultDollarMaquina = document.createElement('div')
         resultDollarMaquina.classList.add('resultDinheiro')
 
         const resultDinheiroPraMaquina = document.createElement('p')
         resultDinheiroPraMaquina.textContent = dinheiroPraMaquina
-        resultDollarMaquina.append(dollarMaquina, resultDinheiroPraMaquina)
+        resultDollarMaquina.append(`R$`, resultDinheiroPraMaquina)
+        const spanDinheiroPraMaquina = document.createElement('span')
         spanDinheiroPraMaquina.append(resultDollarMaquina)
+        divMaquina.append(spanDinheiroPraMaquina)
 
-        const dollarCliente = document.createElement('span')
-        dollarCliente.classList.add('material-symbols-outlined')
-        dollarCliente.textContent = 'attach_money'
-        dollarCliente.style.fontSize = '1em'
-        dollarCliente.style.marginTop = '8px'
 
         const resultDollarCliente = document.createElement('div')
         resultDollarCliente.classList.add('resultDinheiro')
 
         const resultDinheiroProCliente = document.createElement('p')
         resultDinheiroProCliente.textContent = dinheiroProCliente
-        resultDollarCliente.append(dollarCliente, resultDinheiroProCliente)
+        resultDollarCliente.append(`R$`, resultDinheiroProCliente)
+        const spanDinheiroProCliente = document.createElement('span')
         spanDinheiroProCliente.append(resultDollarCliente)
-
-        const dollarFaccao = document.createElement('span')
-        dollarFaccao.classList.add('material-symbols-outlined')
-        dollarFaccao.textContent = 'attach_money'
-        dollarFaccao.style.fontSize = '1em'
-        dollarFaccao.style.marginTop = '8px'
+        divCliente.append(spanDinheiroProCliente)
 
         const resultDollarFaccao = document.createElement('div')
         resultDollarFaccao.classList.add('resultDinheiro')
 
         const resultDinheiroPraFaccao = document.createElement('p')
         resultDinheiroPraFaccao.textContent = dinheiroPraFaccao
-        resultDollarFaccao.append(dollarFaccao, resultDinheiroPraFaccao)
+        resultDollarFaccao.append(`R$`, resultDinheiroPraFaccao)
+        const spanDinheiroPraFaccao = document.createElement('span')
         spanDinheiroPraFaccao.append(resultDollarFaccao)
+        divFaccao.append(spanDinheiroPraFaccao)
+
         
         console.log(valorDaPorcentagem)
 

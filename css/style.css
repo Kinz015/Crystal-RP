@@ -50,9 +50,11 @@ body {
     display: flex;
     justify-content: space-evenly;
     margin-top: 40px;
+    align-items: center;
 }
 
 .inputs {
+    height: 446px;
     display: flex;
     flex-direction: column;
     background-color: #231879;
@@ -70,8 +72,7 @@ body {
     font-size: large;
     padding: 10px;
     border: 0px;
-    border-radius: 10px;
-
+    border-radius: 10px;   
 }
 
 .lavarDinheiro {
@@ -168,13 +169,19 @@ body {
     width: 140px;
 }
 
+.divCopy {
+    display: flex;
+    justify-content: center;
+}
+
 .copy-btn {
-    width: 100%;
     color:  black;
     padding: 20px;
     border-radius: 10px;
     border: 0px;
     font-size: 1.2em;
+    margin-bottom: 40px;
+
 }
 
 .success {
@@ -196,5 +203,6 @@ body {
 .resultDinheiro{
     display: flex;
     justify-content: center;
-    margin-right: 30px;
+    margin-right: 40px;
+    gap: 10px;
 }
