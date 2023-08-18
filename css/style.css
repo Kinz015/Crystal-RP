@@ -224,7 +224,7 @@ body {
 }
 
 .copy-btn:hover {
-    background-color: var(--color-secondary);
+    background-color: var(--bg-color);
     color: white;
 }
 
