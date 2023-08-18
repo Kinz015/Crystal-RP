@@ -1,5 +1,6 @@
 const dinheiroSujo = document.querySelector('#dinheiroSujo')
 const porcentagem = document.querySelector('#porcentagem')
+const lavarDinheiro = document.querySelector('#lavarDinheiro')
 const divMaquina = document.querySelector('.results1')
 const divCliente = document.querySelector('.results2')
 const divFaccao = document.querySelector('.results3')
@@ -7,7 +8,8 @@ const spanBtnCopy = document.querySelector('#spanBtnCopy')
 
 
 
-document.querySelector('#lavarDinheiro').addEventListener('click', function () {
+
+lavarDinheiro.addEventListener('click', function calculate() {
 
 
 
@@ -63,12 +65,18 @@ document.querySelector('#lavarDinheiro').addEventListener('click', function () {
         if (button.innerText === "Copiar") {
             button.innerText = "Copiado!"
             button.classList.add("success")
-            navigator.clipboard.writeText(resultInput.value)
+            navigator.clipboard.writeText(
+            `Valor total sujo: R$ ${dinheiroSujo.value}
+Porcentagem: R$ ${porcentagem.value}%
+Dinheiro pro cliente: R$ ${dinheiroProCliente} 
+Dinheiro pra facção: R$ ${dinheiroPraFaccao}`)
+
+
           } else {
             button.innerText = "Copiar"
             button.classList.remove("success")
           }
-    })    
+    })  
 })
 
 
