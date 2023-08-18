@@ -106,6 +106,7 @@ body {
 
 .divParceria {
     display: flex;
+    height: 560px;
     flex-direction: column;
     background-color: #231879;
     justify-content: center;
