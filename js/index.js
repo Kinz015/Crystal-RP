@@ -1,55 +1,52 @@
 const dinheiroSujo = document.querySelector('#dinheiroSujo')
 const porcentagem = document.querySelector('#porcentagem')
 const lavarDinheiro = document.querySelector('#lavarDinheiro')
+
 const divMaquina = document.querySelector('.results1')
 const divCliente = document.querySelector('.results2')
 const divFaccao = document.querySelector('.results3')
+
 const spanBtnCopy = document.querySelector('#spanBtnCopy')
 
-
-
+const resultDinheiroPraMaquina = document.createElement('input')
+const spanDinheiroPraMaquina = document.createElement('span')
+const resultDinheiroProCliente = document.createElement('input')
+const spanDinheiroProCliente = document.createElement('span')
+const resultDinheiroPraFaccao = document.createElement('input')
+const spanDinheiroPraFaccao = document.createElement('span')
 
 lavarDinheiro.addEventListener('click', function calculate() {
 
+        if (resultDinheiroPraMaquina.value.length  > 0) {
+          resultDinheiroPraMaquina.value = ''
+          resultDinheiroProCliente.value = ''
+          resultDinheiroPraFaccao.value = ''
+        }
+
+        let valorDaPorcentagem = Number(porcentagem.value) * Number(dinheiroSujo.value) / 100
+
+        let dinheiroPraMaquina = Number(dinheiroSujo.value) * 15 / 100
+
+        let dinheiroProCliente = Number(dinheiroSujo.value) - Number(valorDaPorcentagem)
         
+        let dinheiroPraFaccao = valorDaPorcentagem - dinheiroPraMaquina
 
-        const valorDaPorcentagem = Number(porcentagem.value) * Number(dinheiroSujo.value) / 100
-
-        const dinheiroPraMaquina = Number(dinheiroSujo.value) * 15 / 100
-
-        const dinheiroProCliente = Number(dinheiroSujo.value) - Number(valorDaPorcentagem)
-        
-        const dinheiroPraFaccao = valorDaPorcentagem - dinheiroPraMaquina
-
-        const resultDollarMaquina = document.createElement('div')
-        resultDollarMaquina.classList.add('resultDinheiro')
-
-        const resultDinheiroPraMaquina = document.createElement('p')
-        resultDinheiroPraMaquina.textContent = dinheiroPraMaquina
-        resultDollarMaquina.append(`R$`, resultDinheiroPraMaquina)
-        const spanDinheiroPraMaquina = document.createElement('span')
-        spanDinheiroPraMaquina.append(resultDollarMaquina)
+        resultDinheiroPraMaquina.disabled = true
+        resultDinheiroPraMaquina.value = `R$ ${dinheiroPraMaquina}`
+        resultDinheiroPraMaquina.classList.add('resultDinheiro')
+        spanDinheiroPraMaquina.append(resultDinheiroPraMaquina)
         divMaquina.append(spanDinheiroPraMaquina)
 
-
-        const resultDollarCliente = document.createElement('div')
-        resultDollarCliente.classList.add('resultDinheiro')
-
-        const resultDinheiroProCliente = document.createElement('p')
-        resultDinheiroProCliente.textContent = dinheiroProCliente
-        resultDollarCliente.append(`R$`, resultDinheiroProCliente)
-        const spanDinheiroProCliente = document.createElement('span')
-        spanDinheiroProCliente.append(resultDollarCliente)
+        resultDinheiroProCliente.disabled = true
+        resultDinheiroProCliente.value = `R$ ${dinheiroProCliente}`
+        resultDinheiroProCliente.classList.add('resultDinheiro')
+        spanDinheiroProCliente.append(resultDinheiroProCliente)
         divCliente.append(spanDinheiroProCliente)
 
-        const resultDollarFaccao = document.createElement('div')
-        resultDollarFaccao.classList.add('resultDinheiro')
-
-        const resultDinheiroPraFaccao = document.createElement('p')
-        resultDinheiroPraFaccao.textContent = dinheiroPraFaccao
-        resultDollarFaccao.append(`R$`, resultDinheiroPraFaccao)
-        const spanDinheiroPraFaccao = document.createElement('span')
-        spanDinheiroPraFaccao.append(resultDollarFaccao)
+        resultDinheiroPraFaccao.disabled = true
+        resultDinheiroPraFaccao.value = `R$ ${dinheiroPraFaccao}`
+        resultDinheiroPraFaccao.classList.add('resultDinheiro')
+        spanDinheiroPraFaccao.append(resultDinheiroPraFaccao)
         divFaccao.append(spanDinheiroPraFaccao)
 
         
