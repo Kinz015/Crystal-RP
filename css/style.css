@@ -167,7 +167,7 @@ body {
     gap: 40px;
     border: 4px solid ;
     justify-content: space-evenly;
-    margin: 0px 40px 20px 40px;
+    margin: 0px 40px 0px 40px;
 
 }
 
@@ -207,19 +207,28 @@ body {
 
 .divCopy {
     display: flex;
+    margin: 0px 40px;
+    margin-bottom: 40px;
     justify-content: center;
 }
 
 .copy-btn {
-    color:  black;
+    background-color: white;
+    color:  var(--bg-color);
     padding: 20px;
-    border-radius: 10px;
-    border: 0px;
+    border-radius: 0px 0px 10px 10px;
+    border: 4px solid white;
     font-size: 1.2em;
-    margin-bottom: 40px;
     cursor: pointer;
+    width: 100%;
 }
 
-.success {
-    color: greenyellow;
+.copy-btn:hover {
+    background-color: var(--color-secondary);
+    color: white;
+}
+
+.modificadBlocoResults {
+    border-radius: 10px 10px 0px 0px;
+
 }

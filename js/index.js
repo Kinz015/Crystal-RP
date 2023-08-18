@@ -15,6 +15,8 @@ const spanDinheiroProCliente = document.createElement('span')
 const resultDinheiroPraFaccao = document.createElement('input')
 const spanDinheiroPraFaccao = document.createElement('span')
 
+const blocoResults = document.querySelector('.blocoResults')
+
 const copyBtn = document.createElement('button')
 
 lavarDinheiro.addEventListener('click', function calculate() {
@@ -50,6 +52,8 @@ lavarDinheiro.addEventListener('click', function calculate() {
         resultDinheiroPraFaccao.classList.add('resultDinheiro')
         spanDinheiroPraFaccao.append(resultDinheiroPraFaccao)
         divFaccao.append(spanDinheiroPraFaccao)
+
+        blocoResults.classList.add('modificadBlocoResults')
 
         console.log(valorDaPorcentagem)
 
