@@ -55,7 +55,7 @@ body {
 }
 
 .inputs {
-    height: 446px;
+    height: 456px;
     display: flex;
     flex-direction: column;
     background-color: var(--color-secondary);

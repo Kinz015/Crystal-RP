@@ -11,7 +11,7 @@ const spanBtnCopy = document.querySelector('#spanBtnCopy')
 
 lavarDinheiro.addEventListener('click', function calculate() {
 
-
+        
 
         const valorDaPorcentagem = Number(porcentagem.value) * Number(dinheiroSujo.value) / 100
 
