@@ -15,6 +15,8 @@ const spanDinheiroProCliente = document.createElement('span')
 const resultDinheiroPraFaccao = document.createElement('input')
 const spanDinheiroPraFaccao = document.createElement('span')
 
+const copyBtn = document.createElement('button')
+
 lavarDinheiro.addEventListener('click', function calculate() {
 
         if (resultDinheiroPraMaquina.value.length  > 0) {
@@ -49,10 +51,8 @@ lavarDinheiro.addEventListener('click', function calculate() {
         spanDinheiroPraFaccao.append(resultDinheiroPraFaccao)
         divFaccao.append(spanDinheiroPraFaccao)
 
-        
         console.log(valorDaPorcentagem)
 
-        const copyBtn = document.createElement('button')
         copyBtn.classList.add('copy-btn')
         copyBtn.textContent = 'Copiar'
         spanBtnCopy.append(copyBtn)
@@ -67,14 +67,13 @@ lavarDinheiro.addEventListener('click', function calculate() {
 Porcentagem: R$ ${porcentagem.value}%
 Dinheiro pro cliente: R$ ${dinheiroProCliente} 
 Dinheiro pra facção: R$ ${dinheiroPraFaccao}`)
-
-
           } else {
             button.innerText = "Copiar"
             button.classList.remove("success")
           }
     })  
 })
+
 
 
 
