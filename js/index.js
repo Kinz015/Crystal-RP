@@ -27,6 +27,10 @@ lavarDinheiro.addEventListener('click', function calculate() {
           resultDinheiroPraFaccao.value = ''
         }
 
+        // if (porcentagem.value < 30 || porcentagem.value > 100) {
+        //   console.log('')
+        // }
+
         let valorDaPorcentagem = Number(porcentagem.value) * Number(dinheiroSujo.value) / 100
 
         let dinheiroPraMaquina = Number(dinheiroSujo.value) * 15 / 100
@@ -35,20 +39,32 @@ lavarDinheiro.addEventListener('click', function calculate() {
         
         let dinheiroPraFaccao = valorDaPorcentagem - dinheiroPraMaquina
 
+        let resultDinheiroPraMaquinaFormatted = new Intl.NumberFormat('en-US', {
+          currency: 'USD'
+        }).format(dinheiroPraMaquina)
+
         resultDinheiroPraMaquina.disabled = true
-        resultDinheiroPraMaquina.value = `R$ ${dinheiroPraMaquina}`
+        resultDinheiroPraMaquina.value = `R$ ${resultDinheiroPraMaquinaFormatted}`
         resultDinheiroPraMaquina.classList.add('resultDinheiro')
         spanDinheiroPraMaquina.append(resultDinheiroPraMaquina)
         divMaquina.append(spanDinheiroPraMaquina)
 
+        let resultDinheiroProClienteFormatted = new Intl.NumberFormat('en-US', {
+          currency: 'USD'
+        }).format(dinheiroProCliente)
+
         resultDinheiroProCliente.disabled = true
-        resultDinheiroProCliente.value = `R$ ${dinheiroProCliente}`
+        resultDinheiroProCliente.value = `R$ ${resultDinheiroProClienteFormatted}`
         resultDinheiroProCliente.classList.add('resultDinheiro')
         spanDinheiroProCliente.append(resultDinheiroProCliente)
         divCliente.append(spanDinheiroProCliente)
 
+        let resultDinheiroPraFaccaoFormatted = new Intl.NumberFormat('en-US', {
+          currency: 'USD'
+        }).format(dinheiroPraFaccao)
+
         resultDinheiroPraFaccao.disabled = true
-        resultDinheiroPraFaccao.value = `R$ ${dinheiroPraFaccao}`
+        resultDinheiroPraFaccao.value = `R$ ${resultDinheiroPraFaccaoFormatted}`
         resultDinheiroPraFaccao.classList.add('resultDinheiro')
         spanDinheiroPraFaccao.append(resultDinheiroPraFaccao)
         divFaccao.append(spanDinheiroPraFaccao)
