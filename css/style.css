@@ -84,7 +84,8 @@ body {
     font-size: 0.4em;
     color: red;
     max-width: 680px;
-    
+    margin-top: 10px;
+    display: flex;
 }
 
 .lavarDinheiro {
