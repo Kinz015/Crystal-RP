@@ -159,6 +159,10 @@ body {
     text-align: center;
 }
 
+.pComentario {
+    margin-bottom: 30px;
+}
+
 .blocoResults {
     display: flex;
     border-radius: 10px;
