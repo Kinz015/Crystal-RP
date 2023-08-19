@@ -21,7 +21,6 @@
 body {
     background-color: black;
     color: white;
-    min-height: 100vh;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -66,6 +65,7 @@ body {
     font-size: 3em;
     border-radius: 8px;
     font-family: var(--font-pricedown);
+    width: 600px;
 }
 
 .input {
@@ -96,7 +96,7 @@ body {
     margin-top: 20px;
     font-size: 0.4em;
     font-family: var(--font-pricedown);
-    font-size: 0.5em;
+    font-size: 0.6em;
     color: var(--color-secondary);
 }
 
@@ -111,7 +111,6 @@ body {
 
 .divParceria {
     display: flex;
-    height: 560px;
     flex-direction: column;
     background-color: var(--color-secondary);
     justify-content: center;
@@ -160,16 +159,19 @@ body {
 }
 
 .comentario {
+    display: flex;
+    flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.4em;
     background-color: var(--color-secondary);
     padding: 50px;
     border-radius: 8px;
-    text-align: center;
+    align-items: center;
 }
 
 .imgComentario {
     margin: 30px 0px -20px 0px;
+    width: 220px;
 }
 
 .blocoResults {
@@ -206,6 +208,7 @@ body {
 
 .footer {
     height: 100px;
+    width: 100%;
     background-color: var(--bg-color);
     margin: auto;
     display: flex;
@@ -244,3 +247,120 @@ body {
     border-radius: 10px 10px 0px 0px;
     border-bottom: none;
 }
+
+@media (max-width: 1800px) {
+    .blocoCima {
+        font-size: 0.9em;
+    }
+    .lavarDinheiro {
+        font-size: 0.6em;
+    }
+}
+
+@media (max-width: 1730) {
+    .blocoCima {
+        font-size: 0.9em;
+    }
+    .inputs {
+        width: 500px;
+    }
+    .lavarDinheiro {
+        font-size: 0.6em;
+    }
+}
+
+@media (max-width: 1670px) {
+    .blocoCima {
+        font-size: 0.8em;
+    }
+
+    .inputs {
+        width: 480px;
+    }
+    .lavarDinheiro {
+        font-size: 0.6em;
+    }
+    
+    .blocoResults {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 1500px) {
+    .blocoResults {
+        font-size: 0.8em;
+        padding: 30px;
+    }
+
+    .inputs {
+        width: 460px;
+        padding: 50px;
+    }
+
+    .divParceria {
+        padding: 50px;
+    }
+
+    .blocoCima {
+        font-size: 0.7em;
+    }
+
+    .comentario {
+        padding: 40px;
+    }
+
+    .imgComentario {
+        width: 120px;
+    }
+}
+
+@media (max-width: 1359px) {
+    .inputs {
+        width: 100%;
+        padding: 30px;
+        grid-area: inputs;
+    }
+
+    .input {
+        padding: 12px;
+    }
+
+    .blocoResults {
+        font-size: 0.7em;
+        padding: 30px;
+    }
+    
+    .blocoCima {
+       display: grid;
+       grid-template-areas: 
+       "inputs parceria"
+       "comentario parceria";
+       gap: 20px;
+    }
+
+    .input {
+        height: 40px;
+    }
+
+    .lavarDinheiro {
+        font-size: 0.8em;
+    }
+
+    .divParceria {
+        grid-area: parceria;
+    }
+
+    .comentario {
+        margin-top: -10px;
+        flex-direction: row;
+        width: 100%;
+        grid-area: comentario;
+        padding: 30px;
+    }
+    .imgComentario {
+        margin-top: 0px;
+        margin: 0px 0px 0px 10px;
+    }
+}
+
+

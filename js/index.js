@@ -41,7 +41,7 @@ lavarDinheiro.addEventListener('click', function calculate() {
           
           let dinheiroPraFaccao = valorDaPorcentagem - dinheiroPraMaquina
   
-          let resultDinheiroPraMaquinaFormatted = new Intl.NumberFormat('en-US', {
+          let resultDinheiroPraMaquinaFormatted = new Intl.NumberFormat('pt-BR', {
             currency: 'USD'
           }).format(dinheiroPraMaquina)
   
@@ -51,7 +51,7 @@ lavarDinheiro.addEventListener('click', function calculate() {
           spanDinheiroPraMaquina.append(resultDinheiroPraMaquina)
           divMaquina.append(spanDinheiroPraMaquina)
   
-          let resultDinheiroProClienteFormatted = new Intl.NumberFormat('en-US', {
+          let resultDinheiroProClienteFormatted = new Intl.NumberFormat('pt-BR', {
             currency: 'USD'
           }).format(dinheiroProCliente)
   
@@ -61,7 +61,7 @@ lavarDinheiro.addEventListener('click', function calculate() {
           spanDinheiroProCliente.append(resultDinheiroProCliente)
           divCliente.append(spanDinheiroProCliente)
   
-          let resultDinheiroPraFaccaoFormatted = new Intl.NumberFormat('en-US', {
+          let resultDinheiroPraFaccaoFormatted = new Intl.NumberFormat('pt-BR', {
             currency: 'USD'
           }).format(dinheiroPraFaccao)
   
