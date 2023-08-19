@@ -348,6 +348,7 @@ body {
 
     .divParceria {
         grid-area: parceria;
+        font-size: 1.3em;
     }
 
     .comentario {
@@ -361,6 +362,16 @@ body {
         margin-top: 0px;
         margin: 0px 0px 0px 10px;
     }
+}
+
+@media (max-width: 1200px) {
+    .blocoResults {
+        font-size: 0.6em;
+    }
+}
+
+@media (max-width: 1120px) {
+
 }
 
 
