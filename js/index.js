@@ -21,22 +21,21 @@ const copyBtn = document.createElement('button')
 
 const err = document.querySelector('#porcentError')
 
-// dinheiroSujo.value = '$ ' 
-
 dinheiroSujo.addEventListener("keypress", function(e) {
-  if (!checkChar(e)) {
-    e.preventDefault();
-  }
+    if (!checkChar(e)) {
+      e.preventDefault();
+    }
 })
 const resticao = '[0-9]'
 
 function checkChar(e) {
   const char = String.fromCharCode(e.charCode);
-  
+
   if (char.match(resticao)) {
     return true;
   }
 }
+dinheiroSujo.value = '$ ' 
 
 porcentagem.addEventListener("keypress", function(e) {
   if (!checkChar(e)) {
