@@ -21,26 +21,18 @@ const copyBtn = document.createElement('button')
 
 const err = document.querySelector('#porcentError')
 
-dinheiroSujo.value = '$ ' 
-
-// if (dinheiroSujo.value.length = 1) {
-//   dinheiroSujo.addEventListener("keydown", function(event) {
-//     if (event.keyCode === 8) { // Código da tecla "Backspace"
-//       event.preventDefault(); // Impede o comportamento padrão da tecla
-//     }
-//   })
-// }
+// dinheiroSujo.value = '$ ' 
 
 dinheiroSujo.addEventListener("keypress", function(e) {
-    if (!checkChar(e)) {
-      e.preventDefault();
-    }
+  if (!checkChar(e)) {
+    e.preventDefault();
+  }
 })
 const resticao = '[0-9]'
 
 function checkChar(e) {
   const char = String.fromCharCode(e.charCode);
-
+  
   if (char.match(resticao)) {
     return true;
   }
