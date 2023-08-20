@@ -21,6 +21,14 @@ const copyBtn = document.createElement('button')
 
 const err = document.querySelector('#porcentError')
 
+dinheiroSujo.onkeyup = function() {
+  var removeDot = this.value.replace(/\./g, '')
+  this.value = removeDot
+
+  var formatedNumber = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+  this.value = formatedNumber
+}
+
 dinheiroSujo.addEventListener("keypress", function(e) {
     if (!checkChar(e)) {
       e.preventDefault();
@@ -35,7 +43,6 @@ function checkChar(e) {
     return true;
   }
 }
-// dinheiroSujo.value = '$ ' 
 
 porcentagem.addEventListener("keypress", function(e) {
   if (!checkChar(e)) {
@@ -66,9 +73,10 @@ porcentagem.addEventListener('input', () => {
 
 
 lavarDinheiro.addEventListener('click', function calculate() {
-  const positionValue = 1
-  // let dinheiroSujoNumber = dinheiroSujo.value.slice(positionValue)
-  // console.log(dinheiroSujoNumber)
+
+  let valorSemPontos = dinheiroSujo.value.replace('.', '').replace('.', '').replace('.', '')
+  console.log(valorSemPontos)
+
   porcentagemNumber = porcentagem.value[0] += porcentagem.value[1]
 
   if (resultDinheiroPraMaquina.value.length  > 0) {
@@ -81,11 +89,11 @@ lavarDinheiro.addEventListener('click', function calculate() {
     err.textContent = 'O valor da porcentagem deve ser acima de 30%'
   } else {
     err.textContent = ''
-    let valorDaPorcentagem = Number(porcentagemNumber) * Number(dinheiroSujo.value) / 100
+    let valorDaPorcentagem = Number(porcentagemNumber) * Number(valorSemPontos) / 100
 
-    let dinheiroPraMaquina = Number(dinheiroSujo.value) * 15 / 100
+    let dinheiroPraMaquina = Number(valorSemPontos) * 15 / 100
 
-    let dinheiroProCliente = Number(dinheiroSujo.value) - Number(valorDaPorcentagem)
+    let dinheiroProCliente = Number(valorSemPontos) - Number(valorDaPorcentagem)
     
     let dinheiroPraFaccao = valorDaPorcentagem - dinheiroPraMaquina
 
@@ -121,10 +129,10 @@ lavarDinheiro.addEventListener('click', function calculate() {
 
     blocoResults.classList.add('modificadBlocoResults')
 
-    console.log(valorDaPorcentagem)
-    console.log(dinheiroPraMaquina)
-    console.log(dinheiroProCliente)
-    console.log(dinheiroPraFaccao)
+    // console.log(valorDaPorcentagem)
+    // console.log(dinheiroPraMaquina)
+    // console.log(dinheiroProCliente)
+    // console.log(dinheiroPraFaccao)
 
     copyBtn.classList.add('copy-btn')
     copyBtn.textContent = 'Copiar'
