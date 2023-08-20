@@ -21,6 +21,35 @@ const copyBtn = document.createElement('button')
 
 const err = document.querySelector('#porcentError')
 
+dinheiroSujo.addEventListener("keypress", function(e) {
+    if (!checkChar(e)) {
+      e.preventDefault();
+    }
+})
+const resticao = '[0-9]'
+
+function checkChar(e) {
+  const char = String.fromCharCode(e.charCode);
+
+  if (char.match(resticao)) {
+    return true;
+  }
+}
+
+porcentagem.addEventListener("keypress", function(e) {
+  if (!checkChar(e)) {
+    e.preventDefault();
+  }
+})
+
+function checkChar(e) {
+const char = String.fromCharCode(e.charCode);
+
+if (char.match(resticao)) {
+  return true;
+}
+}
+
 porcentagem.addEventListener('keydown', (event) => {
   if (event.key === 'Backspace') {
     porcentagem.value = ''
@@ -37,80 +66,80 @@ porcentagem.addEventListener('input', () => {
 });
 
 lavarDinheiro.addEventListener('click', function calculate() {
-        porcentagemNumber = porcentagem.value[0] += porcentagem.value[1]
+  porcentagemNumber = porcentagem.value[0] += porcentagem.value[1]
 
-        if (resultDinheiroPraMaquina.value.length  > 0) {
-          resultDinheiroPraMaquina.value = ''
-          resultDinheiroProCliente.value = ''
-          resultDinheiroPraFaccao.value = ''
-        }
+  if (resultDinheiroPraMaquina.value.length  > 0) {
+    resultDinheiroPraMaquina.value = ''
+    resultDinheiroProCliente.value = ''
+    resultDinheiroPraFaccao.value = ''
+  }
 
-        if (porcentagemNumber < 30 || porcentagemNumber > 100) {
-          err.textContent = 'O valor da porcentagem deve ser entre 30% e 100%'
-        } else {
-          err.textContent = ''
-          let valorDaPorcentagem = Number(porcentagemNumber) * Number(dinheiroSujo.value) / 100
+  if (porcentagemNumber < 30 || porcentagemNumber > 100) {
+    err.textContent = 'O valor da porcentagem deve ser acima de 30%'
+  } else {
+    err.textContent = ''
+    let valorDaPorcentagem = Number(porcentagemNumber) * Number(dinheiroSujo.value) / 100
 
-          let dinheiroPraMaquina = Number(dinheiroSujo.value) * 15 / 100
-  
-          let dinheiroProCliente = Number(dinheiroSujo.value) - Number(valorDaPorcentagem)
-          
-          let dinheiroPraFaccao = valorDaPorcentagem - dinheiroPraMaquina
-  
-          let resultDinheiroPraMaquinaFormatted = new Intl.NumberFormat('pt-BR', {
-            currency: 'USD'
-          }).format(dinheiroPraMaquina)
-  
-          resultDinheiroPraMaquina.disabled = true
-          resultDinheiroPraMaquina.value = `R$ ${resultDinheiroPraMaquinaFormatted}`
-          resultDinheiroPraMaquina.classList.add('resultDinheiro')
-          spanDinheiroPraMaquina.append(resultDinheiroPraMaquina)
-          divMaquina.append(spanDinheiroPraMaquina)
-  
-          let resultDinheiroProClienteFormatted = new Intl.NumberFormat('pt-BR', {
-            currency: 'USD'
-          }).format(dinheiroProCliente)
-  
-          resultDinheiroProCliente.disabled = true
-          resultDinheiroProCliente.value = `R$ ${resultDinheiroProClienteFormatted}`
-          resultDinheiroProCliente.classList.add('resultDinheiro')
-          spanDinheiroProCliente.append(resultDinheiroProCliente)
-          divCliente.append(spanDinheiroProCliente)
-  
-          let resultDinheiroPraFaccaoFormatted = new Intl.NumberFormat('pt-BR', {
-            currency: 'USD'
-          }).format(dinheiroPraFaccao)
-  
-          resultDinheiroPraFaccao.disabled = true
-          resultDinheiroPraFaccao.value = `R$ ${resultDinheiroPraFaccaoFormatted}`
-          resultDinheiroPraFaccao.classList.add('resultDinheiro')
-          spanDinheiroPraFaccao.append(resultDinheiroPraFaccao)
-          divFaccao.append(spanDinheiroPraFaccao)
-  
-          blocoResults.classList.add('modificadBlocoResults')
-  
-          console.log(valorDaPorcentagem)
-  
-          copyBtn.classList.add('copy-btn')
-          copyBtn.textContent = 'Copiar'
-          spanBtnCopy.append(copyBtn)
-          
-          copyBtn.addEventListener('click', function (ev) {
-          const button = ev.currentTarget
-          if (button.innerText === "Copiar") {
-              button.innerText = "Copiado!"
-              button.classList.add("success")
-              navigator.clipboard.writeText(
-              `Valor total sujo: R$ ${dinheiroSujo.value}
+    let dinheiroPraMaquina = Number(dinheiroSujo.value) * 15 / 100
+
+    let dinheiroProCliente = Number(dinheiroSujo.value) - Number(valorDaPorcentagem)
+    
+    let dinheiroPraFaccao = valorDaPorcentagem - dinheiroPraMaquina
+
+    let resultDinheiroPraMaquinaFormatted = new Intl.NumberFormat('pt-BR', {
+      currency: 'USD'
+    }).format(dinheiroPraMaquina)
+
+    resultDinheiroPraMaquina.disabled = true
+    resultDinheiroPraMaquina.value = `R$ ${resultDinheiroPraMaquinaFormatted}`
+    resultDinheiroPraMaquina.classList.add('resultDinheiro')
+    spanDinheiroPraMaquina.append(resultDinheiroPraMaquina)
+    divMaquina.append(spanDinheiroPraMaquina)
+
+    let resultDinheiroProClienteFormatted = new Intl.NumberFormat('pt-BR', {
+      currency: 'USD'
+    }).format(dinheiroProCliente)
+
+  resultDinheiroProCliente.disabled = true
+    resultDinheiroProCliente.value = `R$ ${resultDinheiroProClienteFormatted}`
+    resultDinheiroProCliente.classList.add('resultDinheiro')
+    spanDinheiroProCliente.append(resultDinheiroProCliente)
+    divCliente.append(spanDinheiroProCliente)
+
+    let resultDinheiroPraFaccaoFormatted = new Intl.NumberFormat('pt-BR', {
+      currency: 'USD'
+    }).format(dinheiroPraFaccao)
+
+    resultDinheiroPraFaccao.disabled = true
+    resultDinheiroPraFaccao.value = `R$ ${resultDinheiroPraFaccaoFormatted}`
+    resultDinheiroPraFaccao.classList.add('resultDinheiro')
+    spanDinheiroPraFaccao.append(resultDinheiroPraFaccao)
+    divFaccao.append(spanDinheiroPraFaccao)
+
+    blocoResults.classList.add('modificadBlocoResults')
+
+    console.log(valorDaPorcentagem)
+
+    copyBtn.classList.add('copy-btn')
+    copyBtn.textContent = 'Copiar'
+    spanBtnCopy.append(copyBtn)
+    
+    copyBtn.addEventListener('click', function (ev) {
+    const button = ev.currentTarget
+    if (button.innerText === "Copiar") {
+        button.innerText = "Copiado!"
+        button.classList.add("success")
+        navigator.clipboard.writeText(
+        `Valor total sujo: R$ ${dinheiroSujo.value}
 Porcentagem: R$ ${porcentagem.value}%
 Dinheiro pro cliente: R$ ${dinheiroProCliente} 
 Dinheiro pra facção: R$ ${dinheiroPraFaccao}`)
-            } else {
-              button.innerText = "Copiar"
-              button.classList.remove("success")
-            }
-      })
-        }    
+      } else {
+        button.innerText = "Copiar"
+        button.classList.remove("success")
+      }
+})
+  }    
 })
 
 

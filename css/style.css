@@ -84,7 +84,7 @@ body {
     font-size: 0.4em;
     color: red;
     max-width: 680px;
-    margin-top: 10px;
+    margin: 10px 0px -10px 0px;
     display: flex;
 }
 
@@ -360,6 +360,7 @@ body {
     }
     .imgComentario {
         margin-top: 0px;
+        margin: auto;
         margin: 0px 0px 0px 10px;
     }
 }
@@ -371,7 +372,35 @@ body {
 }
 
 @media (max-width: 1120px) {
+    .divParceria {
+        font-size: 1em;
+    }
+    .inputs {
+        max-width: 460px;
+    }
+    .lavarDinheiro {
+        padding: 12px;
+    }
+    .comentario {
+        font-size: 1.1em;
+        max-width: 460px;
+    }
+    .blocoResults {
+        padding: 30px 0px ;
+    }
+}
 
+@media (max-width: 1800px) {
+    .inputs {
+        max-width: 400px;
+    }
+    .comentario {
+        max-width: 460px;
+        justify-content: center;
+    }
+    .imgComentario {
+        display: none;
+    }
 }
 
 
