@@ -21,6 +21,16 @@ const copyBtn = document.createElement('button')
 
 const err = document.querySelector('#porcentError')
 
+dinheiroSujo.value = '$ ' 
+
+// if (dinheiroSujo.value.length = 1) {
+//   dinheiroSujo.addEventListener("keydown", function(event) {
+//     if (event.keyCode === 8) { // Código da tecla "Backspace"
+//       event.preventDefault(); // Impede o comportamento padrão da tecla
+//     }
+//   })
+// }
+
 dinheiroSujo.addEventListener("keypress", function(e) {
     if (!checkChar(e)) {
       e.preventDefault();
@@ -56,8 +66,6 @@ porcentagem.addEventListener('keydown', (event) => {
   }
 });
 
-let inputText = porcentagem.value;
-
 porcentagem.addEventListener('input', () => {
       let inputText = porcentagem.value;
       if (inputText.length === 2) {
@@ -65,7 +73,11 @@ porcentagem.addEventListener('input', () => {
       }
 });
 
+
 lavarDinheiro.addEventListener('click', function calculate() {
+  const positionValue = 1
+  let dinheiroSujoNumber = dinheiroSujo.value.slice(positionValue)
+  console.log(dinheiroSujoNumber)
   porcentagemNumber = porcentagem.value[0] += porcentagem.value[1]
 
   if (resultDinheiroPraMaquina.value.length  > 0) {
@@ -78,11 +90,11 @@ lavarDinheiro.addEventListener('click', function calculate() {
     err.textContent = 'O valor da porcentagem deve ser acima de 30%'
   } else {
     err.textContent = ''
-    let valorDaPorcentagem = Number(porcentagemNumber) * Number(dinheiroSujo.value) / 100
+    let valorDaPorcentagem = Number(porcentagemNumber) * Number(dinheiroSujoNumber) / 100
 
-    let dinheiroPraMaquina = Number(dinheiroSujo.value) * 15 / 100
+    let dinheiroPraMaquina = Number(dinheiroSujoNumber) * 15 / 100
 
-    let dinheiroProCliente = Number(dinheiroSujo.value) - Number(valorDaPorcentagem)
+    let dinheiroProCliente = Number(dinheiroSujoNumber) - Number(valorDaPorcentagem)
     
     let dinheiroPraFaccao = valorDaPorcentagem - dinheiroPraMaquina
 
@@ -118,7 +130,10 @@ lavarDinheiro.addEventListener('click', function calculate() {
 
     blocoResults.classList.add('modificadBlocoResults')
 
-    console.log(valorDaPorcentagem)
+    // console.log(valorDaPorcentagem)
+    // console.log(dinheiroPraMaquina)
+    // console.log(dinheiroProCliente)
+    // console.log(dinheiroPraFaccao)
 
     copyBtn.classList.add('copy-btn')
     copyBtn.textContent = 'Copiar'
