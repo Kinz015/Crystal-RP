@@ -67,8 +67,8 @@ porcentagem.addEventListener('input', () => {
 
 lavarDinheiro.addEventListener('click', function calculate() {
   const positionValue = 1
-  let dinheiroSujoNumber = dinheiroSujo.value.slice(positionValue)
-  console.log(dinheiroSujoNumber)
+  // let dinheiroSujoNumber = dinheiroSujo.value.slice(positionValue)
+  // console.log(dinheiroSujoNumber)
   porcentagemNumber = porcentagem.value[0] += porcentagem.value[1]
 
   if (resultDinheiroPraMaquina.value.length  > 0) {
@@ -81,11 +81,11 @@ lavarDinheiro.addEventListener('click', function calculate() {
     err.textContent = 'O valor da porcentagem deve ser acima de 30%'
   } else {
     err.textContent = ''
-    let valorDaPorcentagem = Number(porcentagemNumber) * Number(dinheiroSujoNumber) / 100
+    let valorDaPorcentagem = Number(porcentagemNumber) * Number(dinheiroSujo.value) / 100
 
-    let dinheiroPraMaquina = Number(dinheiroSujoNumber) * 15 / 100
+    let dinheiroPraMaquina = Number(dinheiroSujo.value) * 15 / 100
 
-    let dinheiroProCliente = Number(dinheiroSujoNumber) - Number(valorDaPorcentagem)
+    let dinheiroProCliente = Number(dinheiroSujo.value) - Number(valorDaPorcentagem)
     
     let dinheiroPraFaccao = valorDaPorcentagem - dinheiroPraMaquina
 
@@ -121,10 +121,10 @@ lavarDinheiro.addEventListener('click', function calculate() {
 
     blocoResults.classList.add('modificadBlocoResults')
 
-    // console.log(valorDaPorcentagem)
-    // console.log(dinheiroPraMaquina)
-    // console.log(dinheiroProCliente)
-    // console.log(dinheiroPraFaccao)
+    console.log(valorDaPorcentagem)
+    console.log(dinheiroPraMaquina)
+    console.log(dinheiroProCliente)
+    console.log(dinheiroPraFaccao)
 
     copyBtn.classList.add('copy-btn')
     copyBtn.textContent = 'Copiar'
