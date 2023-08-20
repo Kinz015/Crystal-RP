@@ -212,6 +212,7 @@ body {
     background-color: var(--bg-color);
     margin: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -246,6 +247,16 @@ body {
 .modificadBlocoResults {
     border-radius: 10px 10px 0px 0px;
     border-bottom: none;
+}
+
+.credit {
+    text-align: center;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+}
+a {
+    color: white;
 }
 
 @media (max-width: 1800px) {
