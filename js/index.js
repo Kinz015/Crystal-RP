@@ -21,7 +21,23 @@ const copyBtn = document.createElement('button')
 
 const err = document.querySelector('#porcentError')
 
+porcentagem.addEventListener('keydown', (event) => {
+  if (event.key === 'Backspace') {
+    porcentagem.value = ''
+  }
+});
+
+let inputText = porcentagem.value;
+
+porcentagem.addEventListener('input', () => {
+      let inputText = porcentagem.value;
+      if (inputText.length === 2) {
+        porcentagem.value = inputText +'%';
+      }
+});
+
 lavarDinheiro.addEventListener('click', function calculate() {
+        porcentagemNumber = porcentagem.value[0] += porcentagem.value[1]
 
         if (resultDinheiroPraMaquina.value.length  > 0) {
           resultDinheiroPraMaquina.value = ''
@@ -29,11 +45,11 @@ lavarDinheiro.addEventListener('click', function calculate() {
           resultDinheiroPraFaccao.value = ''
         }
 
-        if (porcentagem.value < 30 || porcentagem.value > 100) {
+        if (porcentagemNumber < 30 || porcentagemNumber > 100) {
           err.textContent = 'O valor da porcentagem deve ser entre 30% e 100%'
         } else {
           err.textContent = ''
-          let valorDaPorcentagem = Number(porcentagem.value) * Number(dinheiroSujo.value) / 100
+          let valorDaPorcentagem = Number(porcentagemNumber) * Number(dinheiroSujo.value) / 100
 
           let dinheiroPraMaquina = Number(dinheiroSujo.value) * 15 / 100
   
