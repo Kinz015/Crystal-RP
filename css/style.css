@@ -401,6 +401,24 @@ body {
     .imgComentario {
         display: none;
     }
+
+    .blocoResults {
+        gap: 4px;
+    }
+}
+
+@media (max-width: 1020px) {
+    .blocoCima {
+        display: flex;
+        flex-direction: column;
+    }
+    .blocoResults {
+        flex-direction: column;
+    }
+
+    .results {
+        margin-bottom: 30px;
+    }
 }
 
 

@@ -35,7 +35,7 @@ function checkChar(e) {
     return true;
   }
 }
-dinheiroSujo.value = '$ ' 
+// dinheiroSujo.value = '$ ' 
 
 porcentagem.addEventListener("keypress", function(e) {
   if (!checkChar(e)) {
