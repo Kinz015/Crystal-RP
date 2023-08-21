@@ -146,8 +146,8 @@ lavarDinheiro.addEventListener('click', function calculate() {
         navigator.clipboard.writeText(
         `Valor total sujo: R$ ${dinheiroSujo.value}
 Porcentagem: ${porcentagem.value}
-Dinheiro pro cliente: R$ ${dinheiroProCliente} 
-Dinheiro pra facção: R$ ${dinheiroPraFaccao}`)
+Dinheiro pro cliente: R$ ${resultDinheiroProCliente.value} 
+Dinheiro pra facção: R$ ${resultDinheiroPraFaccao.value}`)
       } else {
         button.innerText = "Copiar"
         button.classList.remove("success")
