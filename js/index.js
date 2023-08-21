@@ -19,6 +19,8 @@ const blocoResults = document.querySelector('.blocoResults')
 
 const copyBtn = document.createElement('button')
 
+const dinErr = document.querySelector('#dinheiroError')
+
 const err = document.querySelector('#porcentError')
 
 dinheiroSujo.onkeyup = function() {
@@ -73,10 +75,10 @@ porcentagem.addEventListener('input', () => {
 
 lavarDinheiro.addEventListener('click', function calculate() {
 
-  if (dinheiroSujo.value.length  < 1) {
-    alert('Por favor, digite pelo menos 1 caractere.');
-  } else {
-
+  if (dinheiroSujo.value.length  < 1 || porcentagem.value.length < 1) {
+    dinErr.textContent = 'Preencha os campos vazios'
+  }else {
+  dinErr.textContent = ''
   let valorSemPontos = dinheiroSujo.value.replace('.', '').replace('.', '').replace('.', '')
   console.log(valorSemPontos)
 
@@ -88,7 +90,7 @@ lavarDinheiro.addEventListener('click', function calculate() {
     resultDinheiroPraFaccao.value = ''
   }
 
-  if (porcentagemNumber < 30 || porcentagemNumber > 100) {
+  if (porcentagemNumber < 30) {
     err.textContent = 'O valor da porcentagem deve ser acima de 30%'
   } else {
     err.textContent = ''
