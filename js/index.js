@@ -69,10 +69,13 @@ porcentagem.addEventListener('input', () => {
       if (inputText.length === 2) {
         porcentagem.value = inputText +'%';
       }
-});
-
+})
 
 lavarDinheiro.addEventListener('click', function calculate() {
+
+  if (dinheiroSujo.value.length  < 1) {
+    alert('Por favor, digite pelo menos 1 caractere.');
+  } else {
 
   let valorSemPontos = dinheiroSujo.value.replace('.', '').replace('.', '').replace('.', '')
   console.log(valorSemPontos)
@@ -153,7 +156,8 @@ Dinheiro pra facção: ${resultDinheiroPraFaccao.value}`)
         button.classList.remove("success")
       }
 })
-  }    
+  }  
+}  
 })
 
 
